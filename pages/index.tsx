@@ -1,9 +1,10 @@
+import { useEffect, useState, ReactElement, FunctionComponentElement } from 'react'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import api from '../services/api'
 import { Dev, Layout } from '../components'
+import { DevApiData, NavLinkProps, IndexProps } from '../types'
 
-const NavLink = ({ direction, path }) => {
+const NavLink = ({ direction, path }: NavLinkProps): ReactElement => {
   return (
     <>
       <Link href={path}>
@@ -30,8 +31,8 @@ const NavLink = ({ direction, path }) => {
   )
 }
 
-export default function Index ({ devs, next, currentSince }) {
-  const [sinceList, setSinceToList] = useState([])
+export default function Index ({ devs, next, currentSince = 0 }: IndexProps): FunctionComponentElement<IndexProps> {
+  const [sinceList, setSinceToList] = useState<number[]>([])
 
   function hasBack () {
     const currentSinceIndex = sinceList.indexOf(currentSince)
@@ -92,18 +93,18 @@ export default function Index ({ devs, next, currentSince }) {
   )
 }
 
-Index.getInitialProps = async function (context) {
-  const { since } = context.query
+Index.getInitialProps = async function ({ query }: any) {
+  const since = query.since || 0
   const { headers, data } = await api.get(`/api/users${since ? '?since=' + since : ''}`)
   const link = headers.link.split(',')
   const linkNext = link[0].split(';')[0].replace(/(>|<)/g, '')
   const next = linkNext.replace('https://api.github.com/users?since=', '')
 
-  const devs = data.map(dev => ({
+  const devs = data.map((dev: DevApiData) => ({
     id: dev.id,
     login: dev.login,
     avatar: dev.avatar_url
   }))
 
-  return { devs, next, currentSince: parseInt(since) || 0 }
+  return { devs, next, currentSince: parseInt(since) }
 }

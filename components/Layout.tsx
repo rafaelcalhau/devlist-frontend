@@ -1,6 +1,7 @@
 import Head from 'next/head'
+import { ReactChildren } from '../types'
 
-export default function Layout (props) {
+export default function Layout (props: ReactChildren) {
   return (
     <div className='container'>
       <Head>

@@ -1,10 +1,15 @@
-export default function Dev ({ avatar, id, login }) {
+import Link from 'next/link'
+import { Dev as DevType } from '../types'
+
+export default function Dev ({ avatar, id, login }: DevType) {
   return (
     <>
       <div className='box'>
-        <div className='avatar'>
-          <img src={avatar} />
-        </div>
+        <Link href={`/profile/${id}`}>
+          <a className='avatar'>
+            <img src={avatar} />
+          </a>
+        </Link>
         <div className='info'>
           {id}<br />
           <span>{login}</span>
