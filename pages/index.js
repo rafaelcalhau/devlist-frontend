@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react'
 import api from '../services/api'
 import { Dev, Layout } from '../components'
 
-const NavLink = ({ direction, url }) => {
+const NavLink = ({ direction, path }) => {
   return (
     <>
-      <Link href={url}>
+      <Link href={path}>
         <a>
           <i className={`arrow alternate circle ${direction} icon`} />
         </a>
@@ -41,10 +41,10 @@ export default function Index ({ devs, next, currentSince }) {
         const previous = sinceList[currentSinceIndex - 1]
 
         if (previous > 0) {
-          return <NavLink direction='left' url={`/?since=${previous}`} />
+          return <NavLink direction='left' path={`/?since=${previous}`} />
         }
       } else {
-        return <NavLink direction='left' url='/' />
+        return <NavLink direction='left' path='/' />
       }
     }
 
@@ -73,7 +73,7 @@ export default function Index ({ devs, next, currentSince }) {
 
       <footer>
         {hasBack()}
-        <NavLink direction='right' url={`/?since=${next}`} />
+        <NavLink direction='right' path={`/?since=${next}`} />
       </footer>
 
       <style jsx>
