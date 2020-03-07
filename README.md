@@ -4,6 +4,7 @@
 # DevList
 
 Front-end app built with Next.js that shows awesome devs from Github :)
+https://devlist.calhau.now.sh
 
 ![DevList](docs/images/devlist-screen-01.png)
 ![DevList](docs/images/devlist-screen-02.png)
