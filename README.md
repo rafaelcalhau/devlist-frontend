@@ -28,7 +28,12 @@ Front-end app built with Next.js that shows awesome devs from Github :)
     yarn install # or npm install
     ```
 
-## Usage
+## Usage on development
 Run the application on your local enviroment
     
     yarn dev # or npm run dev
+
+## Build for production and usage
+    
+    yarn build # or npm run build
+    yarn start # or npm run start
