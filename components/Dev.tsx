@@ -59,6 +59,18 @@ export default function Dev ({ avatar, id, login }: DevType) {
             min-width: 120px;
             padding: 3px 0;
           }
+
+          @media (max-width: 840px) {
+            .box {
+              width: calc(30% - 20px)
+            }
+          }
+
+          @media (max-width: 530px) {
+            .box {
+              width: calc(40% - 30px)
+            }
+          }
         `}
       </style>
     </>
