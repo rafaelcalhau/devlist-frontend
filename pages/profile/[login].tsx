@@ -3,7 +3,7 @@ import api from '../../services/api'
 import { ProfileData } from '../../types'
 
 function Dev (props: ProfileData) {
-  const formattedDate = (date: string) => new Date(date).toLocaleDateString()
+  const formattedDate = (date: string) => new Date(date).toUTCString()
 
   return (
     <Layout>
@@ -19,7 +19,7 @@ function Dev (props: ProfileData) {
               <small>
                 <a href={props.link} className='link' target='_blank'>{props.link}</a>
               </small> <br />
-              <small className='since'>No GitHub desde {formattedDate(props.created_at)}</small>
+              <small className='since'>GitHub's member since {formattedDate(props.created_at)}</small>
             </div>
           </div>
         </div>
