@@ -5,7 +5,7 @@ export default function Dev ({ avatar, id, login }: DevType) {
   return (
     <>
       <div className='box'>
-        <Link href={`/profile/${id}`}>
+        <Link href='/profile/[login]' as={`/profile/${login}`}>
           <a className='avatar'>
             <img src={avatar} />
           </a>

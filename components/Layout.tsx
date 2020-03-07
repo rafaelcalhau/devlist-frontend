@@ -5,6 +5,7 @@ export default function Layout (props: ReactChildren) {
   return (
     <div className='container'>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
           href='https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap'
           rel='stylesheet'
@@ -49,6 +50,12 @@ export default function Layout (props: ReactChildren) {
 
           main {
             padding: 30px 60px
+          }
+
+          @media (max-width: 530px) {
+            main {
+              padding: 30px 20px
+            }
           }
         `}
       </style>

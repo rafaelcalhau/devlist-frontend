@@ -23,6 +23,30 @@ export type NavLinkProps = {
   path: string
 }
 
+export type ProfileData = {
+  id: number;
+  login: string;
+  avatar: string;
+  name: string;
+  link: string;
+  created_at: string;
+}
+
 export type ReactChildren = {
   children?: ReactNode
+}
+
+export type Repo = {
+  id: number;
+  name: string;
+  description: string;
+  url: string;
+}
+
+export type RepoProps = {
+  data: Repo
+}
+
+export type ReposProps = {
+  login: string
 }
