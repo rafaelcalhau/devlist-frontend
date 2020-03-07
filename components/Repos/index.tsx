@@ -28,7 +28,7 @@ function Repos ({ login }: ReposProps) {
 
   return (
     <div>
-      <h3>Public Projects</h3>
+      <h3>Public Projects {repos.length > 0 && `(${repos.length})`}</h3>
       {
         loading
           ? <span>Carregando...</span>
