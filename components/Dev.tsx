@@ -26,7 +26,7 @@ export default function Dev ({ avatar, id, login }: DevType) {
 
           .avatar {
             align-self: center;
-            border-radius: 75px;
+            border-radius: 50%;
             height: 100%;
             width: 100%;
             max-width: 150px;
@@ -35,6 +35,7 @@ export default function Dev ({ avatar, id, login }: DevType) {
           }
 
           .avatar img {
+            border-radius: 50%;
             height: 100%;
             width: 100%;
             opacity: .7;
