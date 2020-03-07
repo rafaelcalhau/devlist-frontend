@@ -31,7 +31,7 @@ function Repos ({ login }: ReposProps) {
       <h3>Public Projects {repos.length > 0 && `(${repos.length})`}</h3>
       {
         loading
-          ? <span>Carregando...</span>
+          ? <span>Loading...</span>
           : repos.map((repo: any) => <Repo key={repo.id} data={repo} />)
       }
 
