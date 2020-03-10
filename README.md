@@ -14,7 +14,7 @@ https://devlist.calhau.now.sh
 1. Clone the project
 
     ```
-    git clone https://rafaelcalhau@dev.azure.com/rafaelcalhau/DevList-Frontend/_git/DevList-Frontend devlist-web
+    git clone https://github.com/rafaelcalhau/devlist-frontend.git devlist-web
     ```
 
 2. Navigate to the project
