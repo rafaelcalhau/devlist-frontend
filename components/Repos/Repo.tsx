@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { RepoProps } from '../../types'
 
 export default function Repo ({ data }: RepoProps) {

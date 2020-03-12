@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import * as React from 'react'
 import Repo from './Repo'
 import api from '../../services/api'
 import { Repo as RepoType, ReposProps } from '../../types'
+
+const { useEffect, useState } = React
 
 function Repos ({ login }: ReposProps) {
   const [loading, setLoading] = useState(true)
